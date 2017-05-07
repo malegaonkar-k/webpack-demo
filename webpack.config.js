@@ -4,6 +4,7 @@ module.exports = {
         filename: 'bundle.js'
     },
     module: {
+
         loaders: [
             {
                 test: /\.js$/,
@@ -21,8 +22,14 @@ module.exports = {
             {
                 test: /\.scss$/,
                 exclude: /node_modules/,
-                loader: 'style!css!sass'
+                loader: 'style-loader!css-loader!sass-loader'
+            },
+            {
+                test: /\.(jpg|png|gif)$/,
+                include: /images/,
+                loader: 'url-loader'
             }
         ],
-    }
+      }
+
 };
